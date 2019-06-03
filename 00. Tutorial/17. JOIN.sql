@@ -1,7 +1,7 @@
 # JOIN
 # test.db
 
--- join example tables, left and right
+# join example tables, left and right
 CREATE TABLE left ( id INTEGER, description TEXT );
 CREATE TABLE right ( id INTEGER, description TEXT );
 
@@ -37,7 +37,7 @@ SELECT l.description AS left, r.description AS right
 DROP TABLE left;
 DROP TABLE right;
 
--- sale example
+# sale example
 SELECT * FROM sale;
 SELECT * FROM item;
 
@@ -50,5 +50,32 @@ SELECT s.id AS sale, s.date, i.name, i.description, s.price
   FROM sale AS s
   JOIN item AS i ON s.item_id = i.id
   ;
+# Junction Table
+# test.db
 
+SELECT * FROM customer;
+SELECT * FROM item;
+SELECT * FROM sale;
+
+SELECT i.name AS Item, c.name AS Cust, s.price AS Price
+  FROM sale AS s
+  JOIN item AS i ON s.item_id = i.id
+  JOIN customer AS c ON s.customer_id = c.id
+  ORDER BY Cust, Item
+;
+
+# a customer without sales
+INSERT INTO customer ( name ) VALUES ( 'Jane Smith' );
+SELECT * FROM customer;
+
+# left joins
+SELECT c.name AS Cust, c.zip, i.name AS Item, i.description, s.quantity AS Quan, s.price AS Price
+  FROM customer AS c
+  LEFT JOIN sale AS s ON s.customer_id = c.id
+  LEFT JOIN item AS i ON s.item_id = i.id
+  ORDER BY Cust, Item
+;
+
+# restore database
+DELETE FROM customer WHERE id = 4;
 
