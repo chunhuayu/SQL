@@ -1,4 +1,4 @@
-# 03 The SELECT statement
+# The SELECT statement
 # world.db
 
 SELECT 'Hello, World';
@@ -8,7 +8,7 @@ SELECT * FROM Country ORDER BY Name;
 SELECT Name, LifeExpectancy FROM Country ORDER BY Name;
 SELECT Name, LifeExpectancy AS "Life Expectancy" FROM Country ORDER BY Name;
 
-# 04 Selecting Rows
+# Selecting Rows
 # world.db
 
 SELECT Name, Continent, Region FROM Country;
@@ -17,10 +17,41 @@ SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY 
 SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY Name LIMIT 5;
 SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY Name LIMIT 5 OFFSET 5;
 
-# 05 Selecting Columns
+# Selecting Columns
 # world.db
 
 SELECT * from Country;
 SELECT Name, Continent, Region from Country;
 SELECT Name AS Country, Continent, Region from Country;
 SELECT Name AS Country, Region, Continent from Country;
+
+
+# SELECT DISTINCT
+-- world.db
+
+SELECT Continent FROM Country;
+SELECT DISTINCT Continent FROM Country;
+Using the SELECT DISTINCT statement, you will get only unique results. 
+
+-- test.db
+
+CREATE TABLE test ( a int, b int );
+INSERT INTO test VALUES ( 1, 1 );
+INSERT INTO test VALUES ( 2, 1 );
+INSERT INTO test VALUES ( 3, 1 );
+INSERT INTO test VALUES ( 4, 1 );
+INSERT INTO test VALUES ( 5, 1 );
+INSERT INTO test VALUES ( 1, 2 );
+INSERT INTO test VALUES ( 1, 2 );
+INSERT INTO test VALUES ( 1, 2 );
+INSERT INTO test VALUES ( 1, 2 );
+INSERT INTO test VALUES ( 1, 2 );
+SELECT * FROM test;
+
+SELECT DISTINCT a FROM test;
+SELECT DISTINCT b FROM test;
+SELECT DISTINCT a, b FROM test;
+
+DROP TABLE test;
+
+
