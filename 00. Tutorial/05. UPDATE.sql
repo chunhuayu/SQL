@@ -1,4 +1,4 @@
-# 08 Updating Data
+# Updating Data
 # test.db
 
 SELECT * FROM customer;
