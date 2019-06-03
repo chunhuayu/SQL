@@ -9,4 +9,4 @@ SELECT COUNT(*) FROM Country WHERE Population > 100000000 AND Continent = 'Europ
 
 SELECT COUNT(*) FROM Country;
 SELECT COUNT(LifeExpectancy) FROM Country; 
-# display the numbers of rows which the value is non-zero value
+# display the numbers of rows which the value of LifeExpectancy is non-zero
