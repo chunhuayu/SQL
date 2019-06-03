@@ -1,4 +1,4 @@
-# 07 Inserting Data
+# Inserting Data
 # test.db
 
 SELECT * FROM customer;
