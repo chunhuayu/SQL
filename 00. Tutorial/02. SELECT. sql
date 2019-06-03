@@ -27,10 +27,12 @@ SELECT Name AS Country, Region, Continent from Country;
 
 
 # SELECT DISTINCT
+# find the distinct value of column from the single column, 
+# but also it can be used to find the different values from any query and expression
 # world.db
 
 SELECT Continent FROM Country;             # display the Continent column where the Continent is not NULL
-SELECT DISTINCT Continent FROM Country;    # only display the distinct value of Continents from the Continent column 
+SELECT DISTINCT Continent FROM Country;    # only find the different values of Continents from the Continent column 
 
 # test.db
 
