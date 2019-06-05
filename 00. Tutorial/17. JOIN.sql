@@ -1,5 +1,7 @@
 # JOIN
 # test.db
+# some SQL system does not support right join,changing the order of datasets can transform the right join into left.
+
 
 # join example tables, left and right
 CREATE TABLE left ( id INTEGER, description TEXT );
@@ -45,11 +47,14 @@ SELECT s.id AS sale, i.name, s.price
   FROM sale AS s
   JOIN item AS i ON s.item_id = i.id
   ;
+# the connection condition is within on clause " s.item_id=i.id"
 
 SELECT s.id AS sale, s.date, i.name, i.description, s.price 
   FROM sale AS s
   JOIN item AS i ON s.item_id = i.id
   ;
+
+
 # Junction Table
 # test.db
 
@@ -57,7 +62,7 @@ SELECT * FROM customer;
 SELECT * FROM item;
 SELECT * FROM sale;
 
-SELECT i.name AS Item, c.name AS Cust, s.price AS Price
+SELECT i.name AS Item, c.name AS Cust, s.price AS Price.
   FROM sale AS s
   JOIN item AS i ON s.item_id = i.id
   JOIN customer AS c ON s.customer_id = c.id
