@@ -98,3 +98,35 @@ The SQL statement above would insert a new record into the "Persons" table.
 The "Personid" column would be assigned a unique value. 
 The "FirstName" column would be set to "Lars" and the "LastName" column would be set to "Monsen".
 */
+
+--Syntax for Oracle
+/*
+In Oracle the code is a little bit more tricky.
+
+You will have to create an auto-increment field with the sequence object (this object generates a number sequence).
+
+Use the following CREATE SEQUENCE syntax:
+*/
+
+CREATE SEQUENCE seq_person
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1
+CACHE 10;
+
+/*
+The code above creates a sequence object called seq_person, that starts with 1 and will increment by 1. 
+It will also cache up to 10 values for performance. 
+The cache option specifies how many sequence values will be stored in memory for faster access.
+To insert a new record into the "Persons" table, 
+we will have to use the nextval function (this function retrieves the next value from seq_person sequence):
+*/
+
+INSERT INTO Persons (Personid,FirstName,LastName)
+VALUES (seq_person.nextval,'Lars','Monsen');
+
+/*
+The SQL statement above would insert a new record into the "Persons" table. 
+The "Personid" column would be assigned the next number from the seq_person sequence. 
+The "FirstName" column would be set to "Lars" and the "LastName" column would be set to "Monsen".
+*/
