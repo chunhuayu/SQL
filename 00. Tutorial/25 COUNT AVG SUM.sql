@@ -36,6 +36,16 @@ ProductID	ProductName	SupplierID	CategoryID	Unit	Price
 SELECT COUNT(ProductID)
 FROM Products;
 
+-- world.db
+
+SELECT COUNT(*) FROM Country;
+SELECT COUNT(*) FROM Country WHERE Population > 1000000;
+SELECT COUNT(*) FROM Country WHERE Population > 100000000;
+SELECT COUNT(*) FROM Country WHERE Population > 100000000 AND Continent = 'Europe' ;
+
+SELECT COUNT(*) FROM Country;
+SELECT COUNT(LifeExpectancy) FROM Country; 
+
 -- Note: NULL values are not counted.
 
 -- AVG() Example. The following SQL statement finds the average price of all products:
