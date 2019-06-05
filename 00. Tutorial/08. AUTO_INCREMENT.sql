@@ -106,7 +106,7 @@ In Oracle the code is a little bit more tricky.
 You will have to create an auto-increment field with the sequence object (this object generates a number sequence).
 
 Use the following CREATE SEQUENCE syntax:
-*/
+
 
 CREATE SEQUENCE seq_person
 MINVALUE 1
@@ -125,7 +125,7 @@ we will have to use the nextval function (this function retrieves the next value
 INSERT INTO Persons (Personid,FirstName,LastName)
 VALUES (seq_person.nextval,'Lars','Monsen');
 
-/*
+
 The SQL statement above would insert a new record into the "Persons" table. 
 The "Personid" column would be assigned the next number from the seq_person sequence. 
 The "FirstName" column would be set to "Lars" and the "LastName" column would be set to "Monsen".
