@@ -69,3 +69,32 @@ The "Personid" column would be assigned a unique value.
 The "FirstName" column would be set to "Lars" and the "LastName" column would be set to "Monsen".
 */
 
+
+-- Syntax for Access
+-- The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
+
+CREATE TABLE Persons (
+    Personid AUTOINCREMENT PRIMARY KEY,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+);
+
+/*
+The MS Access uses the AUTOINCREMENT keyword to perform an auto-increment feature.
+By default, the starting value for AUTOINCREMENT is 1, and it will increment by 1 for each new record.
+Tip: To specify that the "Personid" column should start at value 10 and increment by 5, 
+change the autoincrement to AUTOINCREMENT(10,5).
+
+To insert a new record into the "Persons" table,
+we will NOT have to specify a value for the "Personid" column (a unique value will be added automatically):
+*/
+
+INSERT INTO Persons (FirstName,LastName)
+VALUES ('Lars','Monsen');
+
+/* 
+The SQL statement above would insert a new record into the "Persons" table. 
+The "Personid" column would be assigned a unique value. 
+The "FirstName" column would be set to "Lars" and the "LastName" column would be set to "Monsen".
+*/
