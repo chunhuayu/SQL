@@ -1,12 +1,10 @@
-/*
-AUTO INCREMENT Field
-Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
+# AUTO INCREMENT Field
+# Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
 
-Often this is the primary key field that we would like to be created automatically every time a new record is inserted.
+# Often this is the primary key field that we would like to be created automatically every time a new record is inserted.
 
-Syntax for MySQL
-The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
-*/
+# Syntax for MySQL
+# The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
 
 CREATE TABLE Persons (
     Personid int NOT NULL AUTO_INCREMENT,
