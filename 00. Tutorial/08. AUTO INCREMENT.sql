@@ -8,7 +8,6 @@ Syntax for MySQL
 The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
 */
 
-
 CREATE TABLE Persons (
     Personid int NOT NULL AUTO_INCREMENT,
     LastName varchar(255) NOT NULL,
@@ -27,7 +26,8 @@ To let the AUTO_INCREMENT sequence start with another value, use the following S
 
 ALTER TABLE Persons AUTO_INCREMENT=100;
 
-/* To insert a new record into the "Persons" table, 
+/* 
+To insert a new record into the "Persons" table, 
 we will NOT have to specify a value for the "Personid" column (a unique value will be added automatically):
 */
 
