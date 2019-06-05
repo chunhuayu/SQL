@@ -8,22 +8,19 @@ SELECT A, B, A = B FROM
   ( SELECT 
     ( ( .1 + .2 ) * 10 ) as A,
     ( 1.0 + 2.0 ) as B
-  );                         
--- the output is A=3.0 and B =3.0 but the value of A=B is 0, that means, they are not equal.
+  );                       -- the output is A=3.0 and B =3.0 but the value of A=B is 0, that means, they are not equal.
 
 SELECT A, B, A = B FROM 
   ( SELECT 
     ((.2+0.2)*10) as A,
     (1.0+3.0) as B
-  );                        
-
--- the output is 4.0, 4.0, 1
+  );                       -- the output is 4.0, 4.0, 1
   
 SELECT A, B, A = B FROM 
   ( SELECT 
     ((.1+0.21)*10) as A,
     (1.0+2.1) as B
-  );                       # the output is 3.1, 3.1, 1
+  );                       -- the output is 3.1, 3.1, 1
  
  
 -- This should be equivalent. .1 plus .2 is .3 times 10, is 3.0, and if I compare A to B as I do here, 
