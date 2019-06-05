@@ -43,7 +43,7 @@ The "FirstName" column would be set to "Lars" and the "LastName" column would be
 /* 
 Syntax for SQL Server
 The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
-
+*/
 
 CREATE TABLE Persons (
     Personid int IDENTITY(1,1) PRIMARY KEY,
